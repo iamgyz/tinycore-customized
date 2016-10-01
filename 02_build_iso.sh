@@ -1,25 +1,16 @@
 #!/bin/bash
 
-set -e
-
-function cleanup() {
-    # clean up our temp folder
-    rm -rf "${TMPDIR}"
-}
-trap cleanup EXIT
-
-
 # default config
 OUTPUTISO="tinycore-custom.iso"
 TMPDIR=`pwd`"/temp"
 
-ROOTFS="${TMPDIR}/rootfs"
+ROOTFS=`pwd`"/rootfs"
 VOLUMEID="tinycore-custom"
 
 # build the rootfs and place it on the iso
 if [ -d ${ROOTFS} ] ; then
 	cd ${ROOTFS}
-	find | cpio -o -H newc | gzip -2 > "../boot/corepure64.gz"
+	find | cpio -o -H newc | gzip -2 > "${TMPDIR}/boot/corepure64.gz"
 	cd -
 fi
 

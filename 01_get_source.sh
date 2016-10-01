@@ -7,7 +7,7 @@ ISO_URL="http://distro.ibiblio.org/tinycorelinux/7.x/x86_64"
 INPUTISO="CorePure64-7.2.iso"
 EXTENSIONS=("ntfs-3g.tcz")
 BOOTARGS=""
-
+ROOTFS=`pwd`"/rootfs"
 # create our working folders
 TMPDIR=`pwd`"/temp"
 
@@ -62,11 +62,11 @@ sed -i "s/append/append cde ${BOOTARGS}/" "${ISOLINUX_CFG}"
 
 
 #extract rootfs
-mkdir ${TMPDIR}/rootfs
-mv ${TMPDIR}/boot/corepure64.gz ${TMPDIR}/rootfs/
-cd ${TMPDIR}/rootfs
+mkdir ${ROOTFS}
+mv ${TMPDIR}/boot/corepure64.gz ${ROOTFS}
+cd ${ROOTFS}
 gunzip corepure64.gz
 cpio -i < corepure64
 rm -rf corepure64
 
-echo "Step1 DONE! Please customize your own rootfs in ${TMPDIR}/rootfs and run second script"
+echo "Step1 DONE! Please customize your own rootfs in rootfs and run the second script"
