@@ -1,7 +1,7 @@
-### What  
+### What?  
 Fetch official Tiny Core Linux ISO  
 Add your own extension  
-Cutomized your rootfs
+Cutomized your rootfs  
 Re-build the bootable ISO image
 
 ### Environment  
