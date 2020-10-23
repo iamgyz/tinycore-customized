@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # default config
-URL="http://distro.ibiblio.org/tinycorelinux/4.x/x86_64"
-ISO_URL="http://distro.ibiblio.org/tinycorelinux/7.x/x86_64"
+URL="https://distro.ibiblio.org/tinycorelinux/4.x/x86_64"
+ISO_URL="https://distro.ibiblio.org/tinycorelinux/7.x/x86_64"
 
 INPUTISO="CorePure64-7.2.iso"
 EXTENSIONS=("ntfs-3g.tcz")
